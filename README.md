@@ -3,6 +3,8 @@
 **Projeto BackEnd** de um chatbot consumindo a API do Gemini e acessando por meio do projeto [chatbot-gemini-frontend](https://github.com/EmanuelBitenc/chatbot-gemini-frontend).
 
 Este projeto permite a interação com um chatbot que utiliza o modelo Gemini, proporcionando uma interface de chat simples e eficiente.
+![image](https://github.com/user-attachments/assets/dca05b73-30d2-4309-8eef-d0bf1ee5f08d)
+
 
 ## Tecnologias Utilizadas
 
@@ -55,6 +57,7 @@ Para rodar a interface de chat do frontend, clone o repositório para sua máqui
 ### 4. Interaja com o Chatbot
 
 Agora, com o backend rodando e o frontend aberto no navegador, você pode interagir com o chatbot utilizando a interface de chat. O backend fará as requisições à API do Gemini e retornará as respostas para o frontend.
+- Caso queira limpar o historico da conversar, basta enviar "clear" no prompt
 
 ### Estrutura do Projeto Backend
 
