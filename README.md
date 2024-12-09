@@ -1,14 +1,15 @@
-# chatbot-gemini-frontend
+# chatbot-gemini-BackEnd
 
-**Projeto Frontend** de um chatbot consumindo a API do Gemini por meio do projeto [chatbot-gemini-backend](https://github.com/EmanuelBitenc/chatbot-gemini-backend).
+**Projeto BackEnd** de um chatbot consumindo a API do Gemini e acessando por meio do projeto [chatbot-gemini-frontend](https://github.com/EmanuelBitenc/chatbot-gemini-frontend).
 
 Este projeto permite a interação com um chatbot que utiliza o modelo Gemini, proporcionando uma interface de chat simples e eficiente.
 
 ## Tecnologias Utilizadas
 
-- **React**: Framework de front-end para construção de interfaces dinâmicas.
-- **Vite**: Ferramenta de build e bundling para um desenvolvimento rápido.
-- **Chakra UI**: Biblioteca de componentes de interface para React, facilitando a criação de interfaces modernas e responsivas.
+- **Node.js**: Ambiente de execução JavaScript.
+- **Express**: Framework para criar o servidor.
+- **Axios**: Cliente HTTP para fazer requisições à API do Gemini.
+- **dotenv**: Para carregar variáveis de ambiente de um arquivo `.env`.
 
 ## Como Rodar
 
@@ -17,33 +18,45 @@ Para rodar este projeto em sua máquina local, siga os passos abaixo:
 ### 1. Obtenha uma chave API do Gemini
 
 - Primeiramente, você precisará de uma chave de API para interagir com o serviço Gemini. Acesse a [documentação oficial do Gemini API](https://ai.google.dev/gemini-api/docs?hl=pt-br#node.js) para obter sua chave.
+- Crie um arquivo `.env` na raiz do projeto e adicione a sua chave API da seguinte forma:
+
+```env
+API_KEY="SuaChaveAqui"
+```
 
 ### 2. Rode o backend
 
-Este projeto **frontend** depende do backend para consumir a API do Gemini. Então, antes de rodar o frontend, execute o projeto [chatbot-gemini-backend](https://github.com/EmanuelBitenc/chatbot-gemini-backend).
-
-### 3. Clone o repositório frontend
+Este projeto backend é responsável por interagir com a API do Gemini. Ele será consumido pelo chatbot-gemini-frontend, então, antes de rodar o frontend, execute o backend.
 
 Clone este repositório para sua máquina local:
 
 ```bash
-git clone https://github.com/EmanuelBitenc/chatbot-gemini-frontend.git
+git clone https://github.com/EmanuelBitenc/chatbot-gemini-backend.git
 ```
 
-### 4. Instale as dependências
-
-Dentro da pasta do projeto, instale as dependências utilizando o npm:
+Instale as dependências do backend:
 
 ```bash
 npm install
 ```
 
-### 5. Rode o projeto
-
-Após a instalação das dependências, você pode rodar o projeto com o seguinte comando:
+Rode o projeto backend:
 
 ```bash
-npm run dev
+node server.ts
 ```
 
-O projeto será iniciado e estará disponível em http://localhost:5173.
+O backend estará rodando localmente na porta 5000 e aguardando requisições.
+
+### 3. Clone o repositório frontend
+
+Para rodar a interface de chat do frontend, clone o repositório para sua máquina local [chatbot-gemini-frontend](https://github.com/EmanuelBitenc/chatbot-gemini-frontend):
+
+### 4. Interaja com o Chatbot
+
+Agora, com o backend rodando e o frontend aberto no navegador, você pode interagir com o chatbot utilizando a interface de chat. O backend fará as requisições à API do Gemini e retornará as respostas para o frontend.
+
+### Estrutura do Projeto Backend
+
+- server.ts: Arquivo principal do servidor. Gerencia as rotas e a comunicação com a API do Gemini.
+- .env: Arquivo para armazenar variáveis de ambiente, como a chave API do Gemini.
